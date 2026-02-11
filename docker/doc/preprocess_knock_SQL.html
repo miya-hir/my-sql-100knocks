@@ -7559,7 +7559,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> sql
@@ -7591,7 +7591,7 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>There's a new jupysql version available (0.11.1), you're running 0.7.2. To upgrade: pip install jupysql --upgrade
-Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.io/s/signup
+Deploy Panel apps for free on Ploomber Cloud! Learn more: https://ploomber.io/s/signup
 </pre>
 </div>
 </div>
@@ -7686,11 +7686,17 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">receipt</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="o">*</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">receipt</span><span class="w"> </span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -7709,7 +7715,7 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <table>
 <thead>
@@ -7867,17 +7873,129 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">sales_ymd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">customer_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">product_cd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">receipt</span><span class="w"> </span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+10 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>sales_ymd</th>
+<th>customer_id</th>
+<th>product_cd</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20181103</td>
+<td>CS006214000001</td>
+<td>P070305012</td>
+<td>158</td>
+</tr>
+<tr>
+<td>20181118</td>
+<td>CS008415000097</td>
+<td>P070701017</td>
+<td>81</td>
+</tr>
+<tr>
+<td>20170712</td>
+<td>CS028414000014</td>
+<td>P060101005</td>
+<td>170</td>
+</tr>
+<tr>
+<td>20190205</td>
+<td>ZZ000000000000</td>
+<td>P050301001</td>
+<td>25</td>
+</tr>
+<tr>
+<td>20180821</td>
+<td>CS025415000050</td>
+<td>P060102007</td>
+<td>90</td>
+</tr>
+<tr>
+<td>20190605</td>
+<td>CS003515000195</td>
+<td>P050102002</td>
+<td>138</td>
+</tr>
+<tr>
+<td>20181205</td>
+<td>CS024514000042</td>
+<td>P080101005</td>
+<td>30</td>
+</tr>
+<tr>
+<td>20190922</td>
+<td>CS040415000178</td>
+<td>P070501004</td>
+<td>128</td>
+</tr>
+<tr>
+<td>20170504</td>
+<td>ZZ000000000000</td>
+<td>P071302010</td>
+<td>770</td>
+</tr>
+<tr>
+<td>20191010</td>
+<td>CS027514000015</td>
+<td>P071101003</td>
+<td>680</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>列を指定し、LIMITを用いてレシート明細データから先頭10件を抽出。</p>
 </div>
 </div>
 </div>
@@ -7895,17 +8013,129 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sales_ymd</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">sales_date</span><span class="p">,</span>
+<span class="w">    </span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">product_cd</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">amount</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">receipt</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+10 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>sales_date</th>
+<th>customer_id</th>
+<th>product_cd</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20181103</td>
+<td>CS006214000001</td>
+<td>P070305012</td>
+<td>158</td>
+</tr>
+<tr>
+<td>20181118</td>
+<td>CS008415000097</td>
+<td>P070701017</td>
+<td>81</td>
+</tr>
+<tr>
+<td>20170712</td>
+<td>CS028414000014</td>
+<td>P060101005</td>
+<td>170</td>
+</tr>
+<tr>
+<td>20190205</td>
+<td>ZZ000000000000</td>
+<td>P050301001</td>
+<td>25</td>
+</tr>
+<tr>
+<td>20180821</td>
+<td>CS025415000050</td>
+<td>P060102007</td>
+<td>90</td>
+</tr>
+<tr>
+<td>20190605</td>
+<td>CS003515000195</td>
+<td>P050102002</td>
+<td>138</td>
+</tr>
+<tr>
+<td>20181205</td>
+<td>CS024514000042</td>
+<td>P080101005</td>
+<td>30</td>
+</tr>
+<tr>
+<td>20190922</td>
+<td>CS040415000178</td>
+<td>P070501004</td>
+<td>128</td>
+</tr>
+<tr>
+<td>20170504</td>
+<td>ZZ000000000000</td>
+<td>P071302010</td>
+<td>770</td>
+</tr>
+<tr>
+<td>20191010</td>
+<td>CS027514000015</td>
+<td>P071101003</td>
+<td>680</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>列を指定し、一部名称を変更した上で、LIMITを用いてレシート明細データから先頭10件を抽出。</p>
 </div>
 </div>
 </div>
@@ -7926,17 +8156,142 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sales_ymd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">product_cd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">receipt</span>
+<span class="k">WHERE</span><span class="w"> </span>
+<span class="w">    </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'CS018205000001'</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+12 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>sales_ymd</th>
+<th>customer_id</th>
+<th>product_cd</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401012</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>20180414</td>
+<td>CS018205000001</td>
+<td>P060104007</td>
+<td>600</td>
+</tr>
+<tr>
+<td>20170614</td>
+<td>CS018205000001</td>
+<td>P050206001</td>
+<td>990</td>
+</tr>
+<tr>
+<td>20170614</td>
+<td>CS018205000001</td>
+<td>P060702015</td>
+<td>108</td>
+</tr>
+<tr>
+<td>20190216</td>
+<td>CS018205000001</td>
+<td>P071005024</td>
+<td>102</td>
+</tr>
+<tr>
+<td>20180414</td>
+<td>CS018205000001</td>
+<td>P071101002</td>
+<td>278</td>
+</tr>
+<tr>
+<td>20190226</td>
+<td>CS018205000001</td>
+<td>P070902035</td>
+<td>168</td>
+</tr>
+<tr>
+<td>20190924</td>
+<td>CS018205000001</td>
+<td>P060805001</td>
+<td>495</td>
+</tr>
+<tr>
+<td>20190226</td>
+<td>CS018205000001</td>
+<td>P071401020</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401005</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>20190216</td>
+<td>CS018205000001</td>
+<td>P040101002</td>
+<td>218</td>
+</tr>
+<tr>
+<td>20190924</td>
+<td>CS018205000001</td>
+<td>P091503001</td>
+<td>280</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>列を指定し、WHEREを用いて条件に合ったデータのみ抽出。</p>
 </div>
 </div>
 </div>
@@ -7958,17 +8313,89 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sales_ymd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">customer_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">product_cd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">receipt</span>
+<span class="k">WHERE</span><span class="w"> </span>
+<span class="w">    </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'CS018205000001'</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1000</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+3 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>sales_ymd</th>
+<th>customer_id</th>
+<th>product_cd</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401012</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>20190226</td>
+<td>CS018205000001</td>
+<td>P071401020</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401005</td>
+<td>1100</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>列を指定し、WHEREとANDを用いて複数条件を満たすデータのみ抽出。</p>
 </div>
 </div>
 </div>
@@ -7990,17 +8417,111 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sales_ymd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">customer_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">product_cd</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">quantity</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">receipt</span>
+<span class="k">WHERE</span><span class="w"> </span>
+<span class="w">    </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'CS018205000001'</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span>
+<span class="w">            </span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1000</span>
+<span class="w">            </span><span class="k">OR</span><span class="w"> </span><span class="n">quantity</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+5 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>sales_ymd</th>
+<th>customer_id</th>
+<th>product_cd</th>
+<th>quantity</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401012</td>
+<td>1</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>20180414</td>
+<td>CS018205000001</td>
+<td>P060104007</td>
+<td>6</td>
+<td>600</td>
+</tr>
+<tr>
+<td>20170614</td>
+<td>CS018205000001</td>
+<td>P050206001</td>
+<td>5</td>
+<td>990</td>
+</tr>
+<tr>
+<td>20190226</td>
+<td>CS018205000001</td>
+<td>P071401020</td>
+<td>1</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401005</td>
+<td>1</td>
+<td>1100</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>列を指定し、WHERE、AND、ORを用いて複数条件を満たすデータのみ抽出。</p>
 </div>
 </div>
 </div>
@@ -8022,17 +8543,77 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">sales_ymd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">customer_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">product_cd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">receipt</span>
+<span class="k">WHERE</span><span class="w"> </span>
+<span class="w">    </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'CS018205000001'</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">2000</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+1 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>sales_ymd</th>
+<th>customer_id</th>
+<th>product_cd</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401005</td>
+<td>1100</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>列を指定し、WHERE、AND、BETWEENを用いて複数条件を満たすデータのみ抽出。</p>
 </div>
 </div>
 </div>
@@ -8054,17 +8635,143 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">sales_ymd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">customer_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">product_cd</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">receipt</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'CS018205000001'</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">product_cd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">'P071401019'</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+12 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>sales_ymd</th>
+<th>customer_id</th>
+<th>product_cd</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401012</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>20180414</td>
+<td>CS018205000001</td>
+<td>P060104007</td>
+<td>600</td>
+</tr>
+<tr>
+<td>20170614</td>
+<td>CS018205000001</td>
+<td>P050206001</td>
+<td>990</td>
+</tr>
+<tr>
+<td>20170614</td>
+<td>CS018205000001</td>
+<td>P060702015</td>
+<td>108</td>
+</tr>
+<tr>
+<td>20190216</td>
+<td>CS018205000001</td>
+<td>P071005024</td>
+<td>102</td>
+</tr>
+<tr>
+<td>20180414</td>
+<td>CS018205000001</td>
+<td>P071101002</td>
+<td>278</td>
+</tr>
+<tr>
+<td>20190226</td>
+<td>CS018205000001</td>
+<td>P070902035</td>
+<td>168</td>
+</tr>
+<tr>
+<td>20190924</td>
+<td>CS018205000001</td>
+<td>P060805001</td>
+<td>495</td>
+</tr>
+<tr>
+<td>20190226</td>
+<td>CS018205000001</td>
+<td>P071401020</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>20180911</td>
+<td>CS018205000001</td>
+<td>P071401005</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>20190216</td>
+<td>CS018205000001</td>
+<td>P040101002</td>
+<td>218</td>
+</tr>
+<tr>
+<td>20190924</td>
+<td>CS018205000001</td>
+<td>P091503001</td>
+<td>280</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>列を指定し、WHERE、AND、！を用いて複数条件（一致するもの、一致しないもの）を満たすデータのみ抽出。</p>
 </div>
 </div>
 </div>
@@ -8083,17 +8790,109 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="o">*</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">store</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">prefecture_cd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">'13'</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">floor_area</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">900</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+3 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>store_cd</th>
+<th>store_name</th>
+<th>prefecture_cd</th>
+<th>prefecture</th>
+<th>address</th>
+<th>address_kana</th>
+<th>tel_no</th>
+<th>longitude</th>
+<th>latitude</th>
+<th>floor_area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S14046</td>
+<td>北山田店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市都筑区北山田一丁目</td>
+<td>カナガワケンヨコハマシツヅキクキタヤマタイッチョウメ</td>
+<td>045-123-4049</td>
+<td>139.5916</td>
+<td>35.56189</td>
+<td>831.0</td>
+</tr>
+<tr>
+<td>S14011</td>
+<td>日吉本町店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市港北区日吉本町四丁目</td>
+<td>カナガワケンヨコハマシコウホククヒヨシホンチョウヨンチョウメ</td>
+<td>045-123-4033</td>
+<td>139.6316</td>
+<td>35.54655</td>
+<td>890.0</td>
+</tr>
+<tr>
+<td>S12013</td>
+<td>習志野店</td>
+<td>12</td>
+<td>千葉県</td>
+<td>千葉県習志野市芝園一丁目</td>
+<td>チバケンナラシノシシバゾノイッチョウメ</td>
+<td>047-123-4002</td>
+<td>140.022</td>
+<td>35.66122</td>
+<td>808.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>WHERE NOT（　OR　）と同じ出力結果となるように、！とANDを用いた別の書き方で抽出。</p>
 </div>
 </div>
 </div>
@@ -8111,17 +8910,194 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+
+<span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span>
+<span class="w">    </span><span class="n">store</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">store_cd</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'S14%'</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">;</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+10 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>store_cd</th>
+<th>store_name</th>
+<th>prefecture_cd</th>
+<th>prefecture</th>
+<th>address</th>
+<th>address_kana</th>
+<th>tel_no</th>
+<th>longitude</th>
+<th>latitude</th>
+<th>floor_area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S14010</td>
+<td>菊名店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市港北区菊名一丁目</td>
+<td>カナガワケンヨコハマシコウホククキクナイッチョウメ</td>
+<td>045-123-4032</td>
+<td>139.6326</td>
+<td>35.50049</td>
+<td>1732.0</td>
+</tr>
+<tr>
+<td>S14033</td>
+<td>阿久和店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市瀬谷区阿久和西一丁目</td>
+<td>カナガワケンヨコハマシセヤクアクワニシイッチョウメ</td>
+<td>045-123-4043</td>
+<td>139.4961</td>
+<td>35.45918</td>
+<td>1495.0</td>
+</tr>
+<tr>
+<td>S14036</td>
+<td>相模原中央店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県相模原市中央二丁目</td>
+<td>カナガワケンサガミハラシチュウオウニチョウメ</td>
+<td>042-123-4045</td>
+<td>139.3716</td>
+<td>35.57327</td>
+<td>1679.0</td>
+</tr>
+<tr>
+<td>S14040</td>
+<td>長津田店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市緑区長津田みなみ台五丁目</td>
+<td>カナガワケンヨコハマシミドリクナガツタミナミダイゴチョウメ</td>
+<td>045-123-4046</td>
+<td>139.4994</td>
+<td>35.52398</td>
+<td>1548.0</td>
+</tr>
+<tr>
+<td>S14050</td>
+<td>阿久和西店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市瀬谷区阿久和西一丁目</td>
+<td>カナガワケンヨコハマシセヤクアクワニシイッチョウメ</td>
+<td>045-123-4053</td>
+<td>139.4961</td>
+<td>35.45918</td>
+<td>1830.0</td>
+</tr>
+<tr>
+<td>S14028</td>
+<td>二ツ橋店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市瀬谷区二ツ橋町</td>
+<td>カナガワケンヨコハマシセヤクフタツバシチョウ</td>
+<td>045-123-4042</td>
+<td>139.4963</td>
+<td>35.46304</td>
+<td>1574.0</td>
+</tr>
+<tr>
+<td>S14012</td>
+<td>本牧和田店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市中区本牧和田</td>
+<td>カナガワケンヨコハマシナカクホンモクワダ</td>
+<td>045-123-4034</td>
+<td>139.6582</td>
+<td>35.42156</td>
+<td>1341.0</td>
+</tr>
+<tr>
+<td>S14046</td>
+<td>北山田店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市都筑区北山田一丁目</td>
+<td>カナガワケンヨコハマシツヅキクキタヤマタイッチョウメ</td>
+<td>045-123-4049</td>
+<td>139.5916</td>
+<td>35.56189</td>
+<td>831.0</td>
+</tr>
+<tr>
+<td>S14022</td>
+<td>逗子店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県逗子市逗子一丁目</td>
+<td>カナガワケンズシシズシイッチョウメ</td>
+<td>046-123-4036</td>
+<td>139.5789</td>
+<td>35.29642</td>
+<td>1838.0</td>
+</tr>
+<tr>
+<td>S14011</td>
+<td>日吉本町店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市港北区日吉本町四丁目</td>
+<td>カナガワケンヨコハマシコウホククヒヨシホンチョウヨンチョウメ</td>
+<td>045-123-4033</td>
+<td>139.6316</td>
+<td>35.54655</td>
+<td>890.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>店舗データから、WHERE／LIKEを用いて店舗コードがS14から始まるものだけ抽出し、さらにLIMITで先頭10件のみ抽出。</p>
 </div>
 </div>
 </div>
